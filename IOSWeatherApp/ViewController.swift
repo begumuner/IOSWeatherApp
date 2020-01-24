@@ -13,6 +13,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var tableView: UITableView!
     var cityName = [String] () // sehir isimleri icin array tanimladik
     var cityImage = [UIImage] ()
+    var cityIcon = [UIImage] ()
     var chosenName = ""
     var chosenImage = UIImage ()
     
@@ -34,6 +35,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         cityImage.append(UIImage( named: "paris")!)
         cityImage.append(UIImage( named: "new york")!)
         
+        cityIcon.append(UIImage( named: "ist")!)
+        cityIcon.append(UIImage( named: "new")!)
+        cityIcon.append(UIImage( named: "berlin-1")!)
+        cityIcon.append(UIImage( named: "paris-1")!)
+        
         
     }
     
@@ -41,6 +47,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell() // cell objesi olusturduk
         cell.textLabel?.text = cityName[indexPath.row] // o obje ile rowlara isimleri yazdirdik
+        cell.imageView?.image = cityIcon[indexPath.row]
         return cell // her zaman cell doner
     }
     
